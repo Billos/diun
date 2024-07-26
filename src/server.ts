@@ -59,7 +59,7 @@ async function updateImage(input: string): Promise<void> {
 
 // Webhook called by Diun
 app.post("/webhook", async (req, res) => {
-  console.log("Received webhook")
+  console.log("Received webhook for " + req.body.image)
   // Sample payload
   await updateImage(req.body.image)
   res.send("Updated")
